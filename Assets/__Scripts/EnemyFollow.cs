@@ -5,8 +5,9 @@ using UnityEngine;
 public class EnemyFollow : MonoBehaviour
 {
     public int maxHealth = 100;
-    int currentHealth;
+    public int currentHealth;
     public float speed;
+    public float distance = 15;
 
     private Transform target;
 
@@ -18,7 +19,12 @@ public class EnemyFollow : MonoBehaviour
 
     void Update()
     {
-        transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+        float distanceCurrent = Vector3.Distance(target.transform.position, this.transform.position);
+
+        if (distanceCurrent <= distance)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+        }
     }
 
     public void TakeDamage(int damage)
