@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-
     public Transform attackPoint;
     public float attackRange = 0.5f;
     public LayerMask enemyLayers;
@@ -13,13 +12,10 @@ public class PlayerAttack : MonoBehaviour
 
     private void Update()     
     {
-
-
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Attack();
         }
-
     }
 
     void Attack()
