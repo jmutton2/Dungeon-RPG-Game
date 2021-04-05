@@ -1,18 +1,25 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+//using PrefabUtility.InstantiatePrefab.
 
-public class EnemyFollow : MonoBehaviour
+public class EnemyMain : MonoBehaviour
 {
     public int maxHealth = 100;
-    public int currentHealth;
+    private int currentHealth;
     public float speed;
     public float distance = 15;
     public SpriteRenderer SR;
     private Transform target;
 
     public double delay = 0;
-    public bool hit = false;
+    private bool hit = false;
+
+    public int dropRate;
+
+    public GameObject deathDrop;
+
+    public GameObject coinDrop;
 
     void Start()
     {
@@ -28,8 +35,6 @@ public class EnemyFollow : MonoBehaviour
         {
             transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
         }
-
-        
         
         if(delay > Time.time && hit == true)
         {
@@ -40,8 +45,6 @@ public class EnemyFollow : MonoBehaviour
         {
             SR.color = Color.white;
         }
-        
-
     }
 
     public void TakeDamage(int damage)
@@ -59,6 +62,15 @@ public class EnemyFollow : MonoBehaviour
 
     void Die()
     {
+        //Dead body spawn
+        Instantiate(deathDrop, this.transform.position, transform.rotation);
+
+        //Coin spawn
+        for (float i = 1; i <= dropRate; i++)
+        {
+            Instantiate(coinDrop, this.transform.position, transform.rotation);
+        }
+        
         Destroy(gameObject);
         Debug.Log("Enemy died!");
     }

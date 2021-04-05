@@ -8,16 +8,22 @@ public class Teleporter : MonoBehaviour
     public GameObject player;
     public GameObject toPoint;
 
+    public void Start()
+    {
+        GlobalVarStore.NextTeleTime = 5f;
+    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Player")
+        if (Time.time >= GlobalVarStore.NextTeleTime)
         {
-            GlobalVarStore.Teles = GlobalVarStore.Teles + 1;
-            Debug.Log(GlobalVarStore.Teles);
-            player.transform.position = new Vector3(toPoint.transform.position.x - 4, toPoint.transform.position.y, 0);
+                if (other.gameObject.tag == "Player")
+                {
+                    player.transform.position = new Vector3(toPoint.transform.position.x, toPoint.transform.position.y, 0);
+                    GlobalVarStore.NextTeleTime  = GlobalVarStore.NextTeleTime  + 5f;
+                }
         }
-    }
 
+    }
 }
 

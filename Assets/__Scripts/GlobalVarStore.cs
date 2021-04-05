@@ -5,7 +5,8 @@
     // >> Add to the list of varaibles below
     // >> Add a new mini class with getters and setters
     //Refer to these objects globally using --GlobalVarStore.Variablename--
-    private static int points, teles;
+    private static int points, teles, coins;
+    private static float nextTeleTime;
 
     public static int Points
     {
@@ -18,7 +19,34 @@
             points = value;
         }
     }
+
+    public static float NextTeleTime
+    {
+        get
+        {
+            return nextTeleTime;
+        }
+        set
+        {
+            nextTeleTime = value;
+        }
+    }
+
+
     
+
+    public static int Coins
+    {
+        get
+        {
+            return coins;
+        }
+        set
+        {
+            coins = value;
+        }
+    }
+
 
     //Teles is currently used for testing purposes, 
     //The value can be seen the debug log when pressing space
