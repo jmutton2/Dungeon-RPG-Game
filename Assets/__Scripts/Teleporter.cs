@@ -13,6 +13,8 @@ public class Teleporter : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
+            GlobalVarStore.Teles = GlobalVarStore.Teles + 1;
+            Debug.Log(GlobalVarStore.Teles);
             player.transform.position = new Vector3(toPoint.transform.position.x - 4, toPoint.transform.position.y, 0);
         }
     }
