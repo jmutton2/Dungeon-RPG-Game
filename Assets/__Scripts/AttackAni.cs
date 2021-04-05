@@ -18,7 +18,7 @@ public class AttackAni : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 anim.SetTrigger("Attack");
-                nextAni = Time.time + 2f;
+                nextAni = Time.time + 1f;
             }
         }
         

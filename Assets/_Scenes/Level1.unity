@@ -27207,6 +27207,11 @@ PrefabInstance:
       propertyPath: m_CollisionDetection
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8642231935548422743, guid: f1276f00969dfb04a8c4659d30f6873f,
+        type: 3}
+      propertyPath: SR
+      value: 
+      objectReference: {fileID: 1512707553}
     - target: {fileID: 8642231935548422745, guid: f1276f00969dfb04a8c4659d30f6873f,
         type: 3}
       propertyPath: m_RootOrder
@@ -33235,6 +33240,12 @@ PrefabInstance:
       objectReference: {fileID: 1304920325}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f3f33353c741e040b867fcff2a2e6cd, type: 3}
+--- !u!212 &1512707553 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 8642231935548422742, guid: f1276f00969dfb04a8c4659d30f6873f,
+    type: 3}
+  m_PrefabInstance: {fileID: 983490282}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1585210773
 GameObject:
   m_ObjectHideFlags: 0

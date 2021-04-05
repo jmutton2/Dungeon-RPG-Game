@@ -17,7 +17,7 @@ public class PlayerAttack : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 Attack();
-                nextAttackTime = Time.time + 2f;
+                nextAttackTime = Time.time + 1f;
             }
         }
         

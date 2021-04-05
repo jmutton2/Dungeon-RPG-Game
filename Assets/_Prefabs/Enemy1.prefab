@@ -101,6 +101,9 @@ MonoBehaviour:
   currentHealth: 0
   speed: 8
   distance: 24.81
+  SR: {fileID: 8642231935548422742}
+  delay: 0
+  hit: 0
 --- !u!61 &8642231935548422741
 BoxCollider2D:
   m_ObjectHideFlags: 0
