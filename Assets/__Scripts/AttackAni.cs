@@ -5,6 +5,7 @@ using UnityEngine;
 public class AttackAni : MonoBehaviour
 {
     Animator anim;
+    float nextAni = 0f;
 
     void Start()
     {
@@ -12,10 +13,14 @@ public class AttackAni : MonoBehaviour
     }
     void Update()
     {
-
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Time.time >= nextAni)
         {
-            anim.SetTrigger("Attack");
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                anim.SetTrigger("Attack");
+                nextAni = Time.time + 2f;
+            }
         }
+        
     }
 }

@@ -30,7 +30,6 @@ public class EnemyFollow : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
-
         if (currentHealth <= 0)
         {
             Die();
