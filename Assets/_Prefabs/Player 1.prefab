@@ -129,7 +129,8 @@ MonoBehaviour:
   animator: {fileID: 4110464317724159150}
   projectilePrefab: {fileID: 355247420893201267, guid: abac4953e39aa24429ccd4c36d7fa5c7,
     type: 3}
-  projectileSpeed: 40
+  projectileSpeed: 15
+  lifespan: 3
 --- !u!95 &4110464317724159150
 Animator:
   serializedVersion: 3

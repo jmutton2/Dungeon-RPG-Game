@@ -46,7 +46,22 @@ public class EnemyMain : MonoBehaviour
             SR.color = Color.white;
         }
     }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        
+        if (other.gameObject.tag == "ProjHero")
+        {
+            Destroy(other.gameObject);
+            Debug.Log("Enemy HIT");
+            TakeDamage(50);
+            if (currentHealth <= 0)
+            {
+                Destroy(transform.parent.gameObject);
+                
+            }
 
+        }
+    }
     public void TakeDamage(int damage)
     {
         hit = true;

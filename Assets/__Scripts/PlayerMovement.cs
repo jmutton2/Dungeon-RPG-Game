@@ -12,7 +12,16 @@ public class PlayerMovement : MonoBehaviour
     Vector2 movement;
 
     public GameObject projectilePrefab;
-    public float projectileSpeed = 40;
+    public float projectileSpeed = 15;
+    
+    public float lifespan = 2f;
+
+    private int direction;
+    private float currentDirx;
+    // -1 => left, +1 => right
+    private float currentDiry;
+    // -1 => down, +1 => up
+
 
     // Update is called once per frame
     void Update()
@@ -24,17 +33,63 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat("Vertical", movement.y);
         animator.SetFloat("Speed", movement.sqrMagnitude);
 
+        currentDirx = animator.GetFloat("Horizontal");
+        currentDiry = animator.GetFloat("Vertical");
+
         if (Input.GetKeyDown(KeyCode.K))
         {
-            TempFire();
+            if(currentDirx == -1)
+            {
+                direction = 3;
+                ProjFire();
+            } else if(currentDirx == 1)
+            {
+                direction = 2;
+                ProjFire();
+            } else if(currentDiry == 1)
+            {
+                direction = 1;
+                ProjFire();
+            } else if (currentDiry == -1)
+            {
+                direction = 0;
+                ProjFire();
+            } else if(currentDiry == 0 && currentDirx == 0)
+            {
+                direction = 0;
+                ProjFire();
+            }
         }
 
-        void TempFire()
+        void ProjFire()
         {
             GameObject projGO = Instantiate<GameObject>(projectilePrefab);
+            Rigidbody2D rigidB = projGO.GetComponent<Rigidbody2D>();
+
             projGO.transform.position = transform.position;
-            Rigidbody rigidB = projGO.GetComponent<Rigidbody>();
-            rigidB.velocity = Vector3.up * projectileSpeed;
+
+            if(direction == 1)
+            {
+                rigidB.velocity = Vector3.up * projectileSpeed;
+                Destroy(projGO, lifespan);
+            } else if (direction ==2)
+            {
+                rigidB.velocity = Vector3.right * projectileSpeed;
+                Destroy(projGO, lifespan);
+
+            }
+            else if(direction == 3)
+            {
+                rigidB.velocity = Vector3.left * projectileSpeed;
+                Destroy(projGO, lifespan);
+
+            }
+            else
+            {
+                rigidB.velocity = Vector3.down * projectileSpeed;
+                Destroy(projGO, lifespan);
+
+            }
         }
     }
 

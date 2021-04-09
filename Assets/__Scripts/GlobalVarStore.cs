@@ -32,9 +32,6 @@
         }
     }
 
-
-    
-
     public static int Coins
     {
         get
