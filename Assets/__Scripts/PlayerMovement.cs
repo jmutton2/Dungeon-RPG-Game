@@ -13,7 +13,8 @@ public class PlayerMovement : MonoBehaviour
 
     public GameObject projectilePrefab;
     public float projectileSpeed = 15;
-    
+    float nextAttackTime = 0f;
+
     public float lifespan = 2f;
 
     private int direction;
@@ -36,30 +37,40 @@ public class PlayerMovement : MonoBehaviour
         currentDirx = animator.GetFloat("Horizontal");
         currentDiry = animator.GetFloat("Vertical");
 
-        if (Input.GetKeyDown(KeyCode.K))
+
+        if(Time.time >= nextAttackTime)
         {
-            if(currentDirx == -1)
+            if (Input.GetKeyDown(KeyCode.K))
             {
-                direction = 3;
-                ProjFire();
-            } else if(currentDirx == 1)
-            {
-                direction = 2;
-                ProjFire();
-            } else if(currentDiry == 1)
-            {
-                direction = 1;
-                ProjFire();
-            } else if (currentDiry == -1)
-            {
-                direction = 0;
-                ProjFire();
-            } else if(currentDiry == 0 && currentDirx == 0)
-            {
-                direction = 0;
-                ProjFire();
+                if(currentDirx == -1)
+                {
+                    direction = 3;
+                    ProjFire();
+                    nextAttackTime = Time.time + 1f;
+                } else if(currentDirx == 1)
+                {
+                    direction = 2;
+                    ProjFire();
+                    nextAttackTime = Time.time + 1f;
+                } else if(currentDiry == 1)
+                {
+                    direction = 1;
+                    ProjFire();
+                    nextAttackTime = Time.time + 1f;
+                } else if (currentDiry == -1)
+                {
+                    direction = 0;
+                    ProjFire();
+                    nextAttackTime = Time.time + 1f;
+                } else if(currentDiry == 0 && currentDirx == 0)
+                {
+                    direction = 0;
+                    ProjFire();
+                    nextAttackTime = Time.time + 1f;
+                }
             }
         }
+        
 
         void ProjFire()
         {
