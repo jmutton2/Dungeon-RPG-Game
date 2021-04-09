@@ -12483,7 +12483,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28a36b6d0c5224249882d501a0d13c38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  toScene: ShopMain
+  toScene: Shop
 --- !u!61 &1753195561
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12610,6 +12610,11 @@ PrefabInstance:
     - target: {fileID: 4110464317724159151, guid: 5f3f33353c741e040b867fcff2a2e6cd,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6036606196220699993, guid: 5f3f33353c741e040b867fcff2a2e6cd,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

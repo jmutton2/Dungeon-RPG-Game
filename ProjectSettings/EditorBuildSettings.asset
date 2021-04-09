@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/Opening Outscene.unity
     guid: 553f635faa4d80f418efa97db34ed7fb
+  - enabled: 1
+    path: Assets/_Scenes/ShopMain.unity
+    guid: 95abf16e38e00e44a8d79146600a171e
   m_configObjects: {}
