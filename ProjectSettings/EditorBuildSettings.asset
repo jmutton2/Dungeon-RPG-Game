@@ -12,6 +12,15 @@ EditorBuildSettings:
     path: Assets/_Scenes/Level1.unity
     guid: 7c34ba1506c09df449e4bc4b827843e9
   - enabled: 1
+    path: Assets/_Scenes/Level2.unity
+    guid: 6246bcf7c6aee4247a5bfba162f132d9
+  - enabled: 1
     path: Assets/_Scenes/Shop.unity
     guid: c048ab3244b360e4e9a06834ec2d1d87
+  - enabled: 1
+    path: Assets/_Scenes/LevelSelect.unity
+    guid: b7de6f51955cbcb47a7df570645fe4b3
+  - enabled: 1
+    path: Assets/_Scenes/Opening Outscene.unity
+    guid: 553f635faa4d80f418efa97db34ed7fb
   m_configObjects: {}
