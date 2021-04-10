@@ -21,7 +21,6 @@ public class AttackAni : MonoBehaviour
                 anim.SetTrigger("Attack");
                 nextAni = Time.time + 1f;
             }
-        }
-        
+        }       
     }
 }
