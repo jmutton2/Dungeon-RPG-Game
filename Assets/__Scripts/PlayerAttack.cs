@@ -6,7 +6,7 @@ public class PlayerAttack : MonoBehaviour
 {
     public Transform attackPoint;
     public float attackRange = 0.5f;
-    public LayerMask enemyLayers;
+    public LayerMask layers;
     public int attackDamage = 40;
     float nextAttackTime = 0f;
 
@@ -17,6 +17,7 @@ public class PlayerAttack : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 Attack();
+                //CheckBarrelHit();
                 nextAttackTime = Time.time + 1f;
             }
         }
@@ -25,11 +26,22 @@ public class PlayerAttack : MonoBehaviour
 
     void Attack()
     {
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
 
-        foreach(Collider2D enemy in hitEnemies)
+        LayerMask enemy = LayerMask.GetMask("Enemy");
+        LayerMask barrel = LayerMask.GetMask("Barrel");
+
+        Collider2D[] hitEnemy = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemy);
+        Collider2D[] hitBarrel = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, barrel);
+
+        foreach (Collider2D hit in hitEnemy)
         {
-            enemy.GetComponent<EnemyMain>().TakeDamage(attackDamage);
+            hit.GetComponent<EnemyMain>().TakeDamage(attackDamage);
+        }
+
+        foreach (Collider2D hit in hitBarrel)
+        {
+            hit.GetComponent<BarrelMain>().TakeDamage(attackDamage);
+
         }
     }
 
