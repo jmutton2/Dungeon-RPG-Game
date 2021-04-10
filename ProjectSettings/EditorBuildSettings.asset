@@ -20,10 +20,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/LevelSelect.unity
     guid: b7de6f51955cbcb47a7df570645fe4b3
-  - enabled: 1
-    path: Assets/_Scenes/Opening Outscene.unity
-    guid: 553f635faa4d80f418efa97db34ed7fb
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/_Scenes/ShopMain.unity
     guid: 95abf16e38e00e44a8d79146600a171e
+  - enabled: 1
+    path: Assets/_Scenes/Cutscenes/InsideShop.unity
+    guid: daf5dcf1eb10cf646a4ef4e6ef2e035c
   m_configObjects: {}
