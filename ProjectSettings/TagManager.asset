@@ -4,9 +4,7 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Enemy
   - ProjHero
-  - Barrel
   layers:
   - Default
   - TransparentFX
@@ -16,13 +14,9 @@ TagManager:
   - UI
   - 
   - 
-  - Enemy
-  - ProjHero
-<<<<<<< HEAD
   - PostProcessing
-=======
-  - Barrel
->>>>>>> cbd116ad5827e81ed2f1dc904db82499863a0d5a
+  - 
+  - 
   - 
   - 
   - 
