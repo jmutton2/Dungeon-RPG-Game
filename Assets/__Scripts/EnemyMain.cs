@@ -18,7 +18,6 @@ public class EnemyMain : MonoBehaviour
     public int dropRate;
 
     public GameObject deathDrop;
-
     public GameObject coinDrop;
 
     void Start()

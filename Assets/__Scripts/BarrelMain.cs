@@ -2,14 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class BarrelMain : MonoBehaviour
 {
+    //public class Random;
+
 
     public int maxHealth = 100;
     private int currentHealth;
     public SpriteRenderer SR;
     public double delay = 0;
     private bool hit = false;
+
+    public GameObject coinDrop;
 
     void Start()
     {
@@ -40,11 +45,16 @@ public class BarrelMain : MonoBehaviour
         {
             Die();
         }
-
     }
 
     void Die()
     {
+        Random box = new Random();
+
+        //int num = Random.range
+
+
+        Instantiate(coinDrop, this.transform.position, transform.rotation);
         Destroy(gameObject);
         Debug.Log("Enemy died!");
     }
