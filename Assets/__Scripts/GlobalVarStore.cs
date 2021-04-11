@@ -7,19 +7,10 @@
     //Refer to these objects globally using --GlobalVarStore.Variablename--
     private static int points, teles, coins;
     private static float nextTeleTime;
+    private static bool defaultPurchased, firePurchased, icePurchased, lightningPurchased;
+    private static string equipped;
 
-    public static int Points
-    {
-        get
-        {
-            return points;
-        }
-        set
-        {
-            points = value;
-        }
-    }
-
+    //Global Delays
     public static float NextTeleTime
     {
         get
@@ -32,6 +23,18 @@
         }
     }
 
+    //Coins and score
+    public static int Points
+    {
+        get
+        {
+            return points;
+        }
+        set
+        {
+            points = value;
+        }
+    }
     public static int Coins
     {
         get
@@ -45,18 +48,66 @@
     }
 
 
-    //Teles is currently used for testing purposes, 
-    //The value can be seen the debug log when pressing space
-    //The value can be set by using the teleporters in level1
-    public static int Teles
+    //Purchased Shop Items
+    public static bool DefaultPurchased
     {
         get
         {
-            return teles;
+            return defaultPurchased;
         }
         set
         {
-            teles = value;
+            defaultPurchased = value;
         }
     }
+
+    public static bool FirePurchased
+    {
+        get
+        {
+            return firePurchased;
+        }
+        set
+        {
+            firePurchased = value;
+        }
+    }
+
+    public static bool IcePurchased
+    {
+        get
+        {
+            return icePurchased;
+        }
+        set
+        {
+            icePurchased = value;
+        }
+    }
+
+    public static bool LightningPurchased
+    {
+        get
+        {
+            return lightningPurchased;
+        }
+        set
+        {
+            firePurchased = value;
+        }
+    }
+
+    //Equipped stats
+    public static string Equipped
+    {
+        get
+        {
+            return equipped;
+        }
+        set
+        {
+            equipped = value;
+        }
+    }
+
 }
