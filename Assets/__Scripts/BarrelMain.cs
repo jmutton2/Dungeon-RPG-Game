@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class BarrelMain : MonoBehaviour
 {
-    //public class Random;
+    public System.Random box = new System.Random();
 
 
     public int maxHealth = 100;
@@ -13,8 +13,9 @@ public class BarrelMain : MonoBehaviour
     public SpriteRenderer SR;
     public double delay = 0;
     private bool hit = false;
+    int num;
 
-    public GameObject coinDrop;
+    public GameObject Drop;
 
     void Start()
     {
@@ -49,12 +50,14 @@ public class BarrelMain : MonoBehaviour
 
     void Die()
     {
-        Random box = new Random();
+        num = box.Next(1,4);
 
-        //int num = Random.range
+        if(num == 1)
+        {
+            Instantiate(Drop, this.transform.position, transform.rotation);
+        }
 
-
-        Instantiate(coinDrop, this.transform.position, transform.rotation);
+        //Instantiate(coinDrop, this.transform.position, transform.rotation);
         Destroy(gameObject);
         Debug.Log("Enemy died!");
     }
