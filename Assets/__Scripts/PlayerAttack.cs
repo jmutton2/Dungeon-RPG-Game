@@ -9,6 +9,7 @@ public class PlayerAttack : MonoBehaviour
     public LayerMask layers;
     public int attackDamage = 35;
     float nextAttackTime = 0f;
+    public float attackDelay = 1f;
 
     void Update()
     {
@@ -17,7 +18,7 @@ public class PlayerAttack : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 Attack();
-                nextAttackTime = Time.time + GlobalVarStore.AttackDelay;
+                nextAttackTime = Time.time + attackDelay;
             }
         }
         
@@ -35,14 +36,11 @@ public class PlayerAttack : MonoBehaviour
         foreach (Collider2D hit in hitEnemy)
         {
             hit.GetComponent<EnemyMain>().TakeDamage(attackDamage);
-            
-
         }
 
         foreach (Collider2D hit in hitBarrel)
         {
             hit.GetComponent<BarrelMain>().TakeDamage(attackDamage);
-
         }
     }
 

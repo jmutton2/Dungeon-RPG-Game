@@ -15360,6 +15360,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soulCounter: {fileID: 0}
+  health: {fileID: 0}
+  attackDamage: {fileID: 0}
+  attackSpeed: {fileID: 0}
+  projSpeed: {fileID: 0}
 --- !u!156049354 &380811274
 Grid:
   m_ObjectHideFlags: 0
@@ -16072,6 +16076,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2108792994448881772, guid: 5f3f33353c741e040b867fcff2a2e6cd,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4110464317724159139, guid: 5f3f33353c741e040b867fcff2a2e6cd,
         type: 3}
       propertyPath: m_Name
@@ -16299,6 +16308,11 @@ PrefabInstance:
     - target: {fileID: 3689342430622954895, guid: 540665dd7b50ee842bd13eabeb46422a,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7510584267696366528, guid: 540665dd7b50ee842bd13eabeb46422a,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

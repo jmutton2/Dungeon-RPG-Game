@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 4110464317724159149}
   - component: {fileID: 6036606196332094957}
   - component: {fileID: 2867272251090944523}
+  - component: {fileID: 2108792994448881772}
   m_Layer: 0
   m_Name: Player 1
   m_TagString: Player
@@ -132,6 +133,7 @@ MonoBehaviour:
     type: 3}
   projectileSpeed: 15
   lifespan: 3
+  attackDelay: 1
 --- !u!95 &4110464317724159150
 Animator:
   serializedVersion: 3
@@ -195,6 +197,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   attackDamage: 40
+  attackDelay: 1
 --- !u!114 &2867272251090944523
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -208,6 +211,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SR: {fileID: 4110464317724159136}
+--- !u!114 &2108792994448881772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4110464317724159139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 511d5138fc4cf03438e44a8190683834, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soulCounter: {fileID: 0}
 --- !u!1 &4110464318456103189
 GameObject:
   m_ObjectHideFlags: 0

@@ -122,7 +122,7 @@
         }
     }
 
-    //Projectile Damge
+    //Projectile Damage
     public static int ProjDamage
     {
         get

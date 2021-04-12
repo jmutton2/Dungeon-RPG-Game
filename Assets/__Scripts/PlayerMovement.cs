@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour
     public float projectileSpeed = 15;
     float nextAttackTime = 0f;
     public float lifespan = 2f;
-
+    public float attackDelay = 1f;
     private int direction;
     private float currentDirx;
     // -1 => left, +1 => right
@@ -45,27 +45,27 @@ public class PlayerMovement : MonoBehaviour
                 {
                     direction = 3;
                     ProjFire();
-                    nextAttackTime = Time.time + GlobalVarStore.AttackDelay;
+                    nextAttackTime = Time.time + attackDelay;
                 } else if(currentDirx == 1)
                 {
                     direction = 2;
                     ProjFire();
-                    nextAttackTime = Time.time + GlobalVarStore.AttackDelay;
+                    nextAttackTime = Time.time + attackDelay;
                 } else if(currentDiry == 1)
                 {
                     direction = 1;
                     ProjFire();
-                    nextAttackTime = Time.time + GlobalVarStore.AttackDelay;
+                    nextAttackTime = Time.time + attackDelay;
                 } else if (currentDiry == -1)
                 {
                     direction = 0;
                     ProjFire();
-                    nextAttackTime = Time.time + GlobalVarStore.AttackDelay;
+                    nextAttackTime = Time.time + attackDelay;
                 } else if(currentDiry == 0 && currentDirx == 0)
                 {
                     direction = 0;
                     ProjFire();
-                    nextAttackTime = Time.time + GlobalVarStore.AttackDelay;
+                    nextAttackTime = Time.time + attackDelay;
                 }
             }
         }

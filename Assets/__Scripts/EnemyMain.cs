@@ -15,7 +15,10 @@ public class EnemyMain : MonoBehaviour
 
     public double delay = 0;
     float freezeDelay = 0;
+    //float fireDelay = 0;
+    //float fireTick = 0;
     private bool hit = false;
+    //private bool done = false;
 
     public int dropRate;
 
@@ -52,7 +55,21 @@ public class EnemyMain : MonoBehaviour
                 speed = 8;
             }
         }
-        else if (GlobalVarStore.Equipped != "ice")
+        //else if (GlobalVarStore.Equipped == "fire")
+        //{
+        //    if (fireDelay > Time.time && hit == true)
+        //    {
+        //        SR.color = Color.red;
+        //        speed = 0;
+        //        hit = false;
+        //    }
+        //    if (fireDelay < Time.time)
+        //    {
+        //        SR.color = Color.white;
+        //        speed = 8;
+        //    }
+        //}
+        else
         {
             if (delay > Time.time && hit == true)
             {
@@ -85,10 +102,32 @@ public class EnemyMain : MonoBehaviour
     }
     public void TakeDamage(int damage)
     {
-        hit = true;
-        delay = Time.time + 0.5;
-        freezeDelay = Time.time + 2;
-        currentHealth -= damage;
+
+        //if(GlobalVarStore.Equipped == "fire")
+        //{
+        //    hit = true;
+        //    delay = Time.time + 0.5;
+        //    int wait = 0;
+        //    int waited = 1;
+            
+        //    while(wait < waited && done == false)
+        //    {
+        //        if(done == false)
+        //        {
+        //            currentHealth -= damage;
+        //            fireTick = Time.time + 1;
+        //            done = true;
+        //        }      
+
+        //    }
+        //}
+        //else
+        //{
+            hit = true;
+            delay = Time.time + 0.5;
+            freezeDelay = Time.time + 2;
+            currentHealth -= damage;
+        //}   
 
         if (currentHealth <= 0)
         {
