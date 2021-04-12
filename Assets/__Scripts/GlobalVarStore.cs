@@ -7,8 +7,12 @@
     //Refer to these objects globally using --GlobalVarStore.Variablename--
     private static int points, coins, projDamage;
     private static float nextTeleTime, attackDelay;
-    private static bool defaultPurchased, firePurchased, icePurchased, lightningPurchased;
-    private static string equipped;
+    private static bool defaultPurchased = true;
+    private static bool firePurchased = false;
+    private static bool icePurchased = false;
+    private static bool lightningPurchased = false;
+
+    private static string equipped = "default";
 
     //Global Delays
     public static float NextTeleTime

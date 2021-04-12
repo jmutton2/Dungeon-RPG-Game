@@ -10,7 +10,7 @@ public class Teleporter : MonoBehaviour
 
     public void Start()
     {
-        GlobalVarStore.NextTeleTime = 5f;
+        GlobalVarStore.NextTeleTime = 10f;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -20,7 +20,7 @@ public class Teleporter : MonoBehaviour
                 if (other.gameObject.tag == "Player")
                 {
                     player.transform.position = new Vector3(toPoint.transform.position.x, toPoint.transform.position.y, 0);
-                    GlobalVarStore.NextTeleTime  = GlobalVarStore.NextTeleTime  + 5f;
+                    GlobalVarStore.NextTeleTime  = GlobalVarStore.NextTeleTime  + 10f;
                 }
         }
 

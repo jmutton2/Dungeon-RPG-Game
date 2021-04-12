@@ -24,42 +24,83 @@ public class Shop : MonoBehaviour
     //Purchase buttons
     public void DefaultButton()
     {
-        if (!GlobalVarStore.DefaultPurchased)
+        Debug.Log(!GlobalVarStore.DefaultPurchased && GlobalVarStore.Coins >= 5);
+        Debug.Log(GlobalVarStore.DefaultPurchased);
+
+        if (!GlobalVarStore.DefaultPurchased && GlobalVarStore.Coins >= 5)
         {
             GlobalVarStore.Coins = GlobalVarStore.Coins - 5;
             GlobalVarStore.DefaultPurchased = true;
+            GlobalVarStore.Equipped = "default";
         }
-        GlobalVarStore.Equipped = "default";
+
+        if (GlobalVarStore.DefaultPurchased)
+        {
+            GlobalVarStore.Equipped = "default";
+        }
+
+        Debug.Log(GlobalVarStore.Equipped);
+
     }
 
     public void FireButton()
     {
-        if (!GlobalVarStore.FirePurchased)
+        Debug.Log(!GlobalVarStore.FirePurchased && GlobalVarStore.Coins >= 5);
+        Debug.Log(GlobalVarStore.FirePurchased);
+
+        if (!GlobalVarStore.FirePurchased && GlobalVarStore.Coins >= 50)
         {
             GlobalVarStore.Coins = GlobalVarStore.Coins - 50;
             GlobalVarStore.FirePurchased = true;
+            GlobalVarStore.Equipped = "fire";
         }
-        GlobalVarStore.Equipped = "fire";
+        
+        if (GlobalVarStore.DefaultPurchased)
+        {
+            GlobalVarStore.Equipped = "fire";
+        }
+
+        Debug.Log(GlobalVarStore.Equipped);
     }
 
     public void IceButton()
     {
-        if (!GlobalVarStore.IcePurchased)
+        Debug.Log(!GlobalVarStore.IcePurchased && GlobalVarStore.Coins >= 5);
+        Debug.Log(GlobalVarStore.IcePurchased);
+
+        if (!GlobalVarStore.IcePurchased && GlobalVarStore.Coins >= 50)
         {
             GlobalVarStore.Coins = GlobalVarStore.Coins - 50;
             GlobalVarStore.IcePurchased = true;
+            GlobalVarStore.Equipped = "ice";
         }
-        GlobalVarStore.Equipped = "ice";
+        
+        if (GlobalVarStore.DefaultPurchased)
+        {
+            GlobalVarStore.Equipped = "ice";
+        }
+
+        Debug.Log(GlobalVarStore.Equipped);
     }
 
     public void LightningButton()
     {
-        if (!GlobalVarStore.LightningPurchased)
+        Debug.Log(!GlobalVarStore.LightningPurchased && GlobalVarStore.Coins >= 5);
+        Debug.Log(GlobalVarStore.LightningPurchased);
+
+        if (!GlobalVarStore.LightningPurchased && GlobalVarStore.Coins >= 100)
         {
-            GlobalVarStore.Coins = GlobalVarStore.Coins - 50;
+            GlobalVarStore.Coins = GlobalVarStore.Coins - 100;
             GlobalVarStore.LightningPurchased = true;
+            GlobalVarStore.Equipped = "lightning";
         }
-        GlobalVarStore.Equipped = "lightning";
+
+        if (GlobalVarStore.DefaultPurchased)
+        {
+            GlobalVarStore.Equipped = "lightning";
+        }
+
+        Debug.Log(GlobalVarStore.Equipped);
     }
 
 
