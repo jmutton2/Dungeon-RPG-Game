@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class EnemyTouch : MonoBehaviour{
 
-    public int maxHealth = 100;
-    public int currentHealth;
+    public int maxHealth = 200;
+    public int currentHealth = 200;
     public HealthBar healthbar;
 
 

@@ -14,7 +14,6 @@ public class PlayerMovement : MonoBehaviour
     public GameObject projectilePrefab;
     public float projectileSpeed = 15;
     float nextAttackTime = 0f;
-
     public float lifespan = 2f;
 
     private int direction;
@@ -46,27 +45,27 @@ public class PlayerMovement : MonoBehaviour
                 {
                     direction = 3;
                     ProjFire();
-                    nextAttackTime = Time.time + 1f;
+                    nextAttackTime = Time.time + GlobalVarStore.AttackDelay;
                 } else if(currentDirx == 1)
                 {
                     direction = 2;
                     ProjFire();
-                    nextAttackTime = Time.time + 1f;
+                    nextAttackTime = Time.time + GlobalVarStore.AttackDelay;
                 } else if(currentDiry == 1)
                 {
                     direction = 1;
                     ProjFire();
-                    nextAttackTime = Time.time + 1f;
+                    nextAttackTime = Time.time + GlobalVarStore.AttackDelay;
                 } else if (currentDiry == -1)
                 {
                     direction = 0;
                     ProjFire();
-                    nextAttackTime = Time.time + 1f;
+                    nextAttackTime = Time.time + GlobalVarStore.AttackDelay;
                 } else if(currentDiry == 0 && currentDirx == 0)
                 {
                     direction = 0;
                     ProjFire();
-                    nextAttackTime = Time.time + 1f;
+                    nextAttackTime = Time.time + GlobalVarStore.AttackDelay;
                 }
             }
         }
@@ -83,23 +82,21 @@ public class PlayerMovement : MonoBehaviour
             {
                 rigidB.velocity = Vector3.up * projectileSpeed;
                 Destroy(projGO, lifespan);
-            } else if (direction ==2)
+            }
+            else if (direction ==2)
             {
                 rigidB.velocity = Vector3.right * projectileSpeed;
                 Destroy(projGO, lifespan);
-
             }
             else if(direction == 3)
             {
                 rigidB.velocity = Vector3.left * projectileSpeed;
                 Destroy(projGO, lifespan);
-
             }
             else
             {
                 rigidB.velocity = Vector3.down * projectileSpeed;
                 Destroy(projGO, lifespan);
-
             }
         }
     }

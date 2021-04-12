@@ -100,6 +100,7 @@ MonoBehaviour:
   maxHealth: 100
   speed: 8
   distance: 24.81
+  shootDamage: 50
   SR: {fileID: 8642231935548422742}
   delay: 0
   dropRate: 5

@@ -5,8 +5,8 @@
     // >> Add to the list of varaibles below
     // >> Add a new mini class with getters and setters
     //Refer to these objects globally using --GlobalVarStore.Variablename--
-    private static int points, teles, coins;
-    private static float nextTeleTime;
+    private static int points, coins, projDamage;
+    private static float nextTeleTime, attackDelay;
     private static bool defaultPurchased, firePurchased, icePurchased, lightningPurchased;
     private static string equipped;
 
@@ -20,6 +20,18 @@
         set
         {
             nextTeleTime = value;
+        }
+    }
+
+    public static float AttackDelay
+    {
+        get
+        {
+            return attackDelay;
+        }
+        set
+        {
+            attackDelay = value;
         }
     }
 
@@ -110,4 +122,16 @@
         }
     }
 
+    //Projectile Damge
+    public static int ProjDamage
+    {
+        get
+        {
+            return projDamage;
+        }
+        set
+        {
+            projDamage = value;
+        }
+    }
 }

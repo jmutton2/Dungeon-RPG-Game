@@ -7,12 +7,14 @@ public class EnemyMain : MonoBehaviour
 {
     public int maxHealth = 100;
     private int currentHealth;
-    public float speed;
+    public float speed = 8;
     public float distance = 15;
+    public int shootDamage = 50;
     public SpriteRenderer SR;
     private Transform target;
 
     public double delay = 0;
+    float freezeDelay = 0;
     private bool hit = false;
 
     public int dropRate;
@@ -35,16 +37,36 @@ public class EnemyMain : MonoBehaviour
             transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
         }
         
-        if(delay > Time.time && hit == true)
+        
+        if(GlobalVarStore.Equipped == "ice")
         {
-            SR.color = Color.red;
-            hit = false;
+            if(freezeDelay > Time.time && hit == true)
+            {
+                SR.color = Color.blue;
+                speed = 0;
+                hit = false;
+            }
+            if (freezeDelay < Time.time)
+            {
+                SR.color = Color.white;
+                speed = 8;
+            }
         }
-        if(delay < Time.time)
+        else if (GlobalVarStore.Equipped != "ice")
         {
-            SR.color = Color.white;
+            if (delay > Time.time && hit == true)
+            {
+                SR.color = Color.red;
+                hit = false;
+            }
+            if (delay < Time.time)
+            {
+                SR.color = Color.white;
+            }
         }
+
     }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         
@@ -52,7 +74,7 @@ public class EnemyMain : MonoBehaviour
         {
             Destroy(other.gameObject);
             Debug.Log("Enemy HIT");
-            TakeDamage(50);
+            TakeDamage(GlobalVarStore.ProjDamage);
             if (currentHealth <= 0)
             {
                 Destroy(transform.parent.gameObject);
@@ -65,6 +87,7 @@ public class EnemyMain : MonoBehaviour
     {
         hit = true;
         delay = Time.time + 0.5;
+        freezeDelay = Time.time + 2;
         currentHealth -= damage;
 
         if (currentHealth <= 0)

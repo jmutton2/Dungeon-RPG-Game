@@ -7,7 +7,7 @@ public class PlayerAttack : MonoBehaviour
     public Transform attackPoint;
     public float attackRange = 0.5f;
     public LayerMask layers;
-    public int attackDamage = 40;
+    public int attackDamage = 35;
     float nextAttackTime = 0f;
 
     void Update()
@@ -17,8 +17,7 @@ public class PlayerAttack : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 Attack();
-                //CheckBarrelHit();
-                nextAttackTime = Time.time + 1f;
+                nextAttackTime = Time.time + GlobalVarStore.AttackDelay;
             }
         }
         
@@ -36,6 +35,8 @@ public class PlayerAttack : MonoBehaviour
         foreach (Collider2D hit in hitEnemy)
         {
             hit.GetComponent<EnemyMain>().TakeDamage(attackDamage);
+            
+
         }
 
         foreach (Collider2D hit in hitBarrel)
