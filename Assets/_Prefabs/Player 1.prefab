@@ -196,7 +196,7 @@ MonoBehaviour:
   layers:
     serializedVersion: 2
     m_Bits: 0
-  attackDamage: 40
+  attackDamage: 50
   attackDelay: 1
 --- !u!114 &2867272251090944523
 MonoBehaviour:
@@ -224,6 +224,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soulCounter: {fileID: 0}
+  health: {fileID: 0}
+  attackDamage: {fileID: 0}
+  attackSpeed: {fileID: 0}
+  projSpeed: {fileID: 0}
 --- !u!1 &4110464318456103189
 GameObject:
   m_ObjectHideFlags: 0

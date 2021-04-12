@@ -2,9 +2,25 @@
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Shop : MonoBehaviour
 {
+    public GameObject lootScore;
+    private Text text;
+
+    void Start()
+    {
+        text = lootScore.GetComponent<Text>();
+    }
+    void Update()
+    {
+        string coins = GlobalVarStore.Coins.ToString();
+        text.text = "Loot: " + coins;
+    }
+
+
+
     //Purchase buttons
     public void DefaultButton()
     {

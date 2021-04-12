@@ -25,6 +25,8 @@ public class BarrelMain : MonoBehaviour
     void Update()
     {
 
+        num = box.Next(1, 3);
+
         if (delay > Time.time && hit == true)
         {
             SR.color = Color.red;
@@ -50,7 +52,7 @@ public class BarrelMain : MonoBehaviour
 
     void Die()
     {
-        num = box.Next(1,4);
+        
 
         if(num == 1)
         {
