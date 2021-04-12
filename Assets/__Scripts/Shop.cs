@@ -54,8 +54,8 @@ public class Shop : MonoBehaviour
             GlobalVarStore.FirePurchased = true;
             GlobalVarStore.Equipped = "fire";
         }
-        
-        if (GlobalVarStore.DefaultPurchased)
+
+        if (GlobalVarStore.DefaultPurchased == true)
         {
             GlobalVarStore.Equipped = "fire";
         }
