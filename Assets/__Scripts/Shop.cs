@@ -24,8 +24,6 @@ public class Shop : MonoBehaviour
     //Purchase buttons
     public void DefaultButton()
     {
-        Debug.Log(!GlobalVarStore.DefaultPurchased && GlobalVarStore.Coins >= 5);
-        Debug.Log(GlobalVarStore.DefaultPurchased);
 
         if (!GlobalVarStore.DefaultPurchased && GlobalVarStore.Coins >= 5)
         {
@@ -39,14 +37,11 @@ public class Shop : MonoBehaviour
             GlobalVarStore.Equipped = "default";
         }
 
-        Debug.Log(GlobalVarStore.Equipped);
 
     }
 
     public void FireButton()
     {
-        Debug.Log(!GlobalVarStore.FirePurchased && GlobalVarStore.Coins >= 5);
-        Debug.Log(GlobalVarStore.FirePurchased);
 
         if (!GlobalVarStore.FirePurchased && GlobalVarStore.Coins >= 50)
         {
@@ -55,18 +50,15 @@ public class Shop : MonoBehaviour
             GlobalVarStore.Equipped = "fire";
         }
 
-        if (GlobalVarStore.DefaultPurchased == true)
+        if (GlobalVarStore.FirePurchased)
         {
             GlobalVarStore.Equipped = "fire";
         }
 
-        Debug.Log(GlobalVarStore.Equipped);
     }
 
     public void IceButton()
     {
-        Debug.Log(!GlobalVarStore.IcePurchased && GlobalVarStore.Coins >= 5);
-        Debug.Log(GlobalVarStore.IcePurchased);
 
         if (!GlobalVarStore.IcePurchased && GlobalVarStore.Coins >= 50)
         {
@@ -74,19 +66,15 @@ public class Shop : MonoBehaviour
             GlobalVarStore.IcePurchased = true;
             GlobalVarStore.Equipped = "ice";
         }
-        
-        if (GlobalVarStore.DefaultPurchased)
+
+        if (GlobalVarStore.IcePurchased)
         {
             GlobalVarStore.Equipped = "ice";
         }
-
-        Debug.Log(GlobalVarStore.Equipped);
     }
 
     public void LightningButton()
     {
-        Debug.Log(!GlobalVarStore.LightningPurchased && GlobalVarStore.Coins >= 5);
-        Debug.Log(GlobalVarStore.LightningPurchased);
 
         if (!GlobalVarStore.LightningPurchased && GlobalVarStore.Coins >= 100)
         {
@@ -95,12 +83,10 @@ public class Shop : MonoBehaviour
             GlobalVarStore.Equipped = "lightning";
         }
 
-        if (GlobalVarStore.DefaultPurchased)
+        if (GlobalVarStore.LightningPurchased)
         {
             GlobalVarStore.Equipped = "lightning";
         }
-
-        Debug.Log(GlobalVarStore.Equipped);
     }
 
 
