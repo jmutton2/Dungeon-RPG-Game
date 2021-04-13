@@ -59,7 +59,9 @@ public class BarrelMain : MonoBehaviour
             Instantiate(Drop, this.transform.position, transform.rotation);
         }
 
+        GlobalVarStore.Score = GlobalVarStore.Score + 5;
+
         Destroy(gameObject);
-        Debug.Log("Enemy died!");
+
     }
 }

@@ -31,6 +31,8 @@ public class light : MonoBehaviour
                     vignette.intensity.value = 0.6f; 
                 }
 
+                GlobalVarStore.Score = GlobalVarStore.Score + 3;
+
                 Destroy(gameObject);
             }
         }

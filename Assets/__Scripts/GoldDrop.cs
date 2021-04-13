@@ -10,6 +10,7 @@ public class GoldDrop : MonoBehaviour
         {
             Destroy(gameObject);
             GlobalVarStore.Coins = GlobalVarStore.Coins + 10;
+            GlobalVarStore.Score = GlobalVarStore.Score + 20;
         }
     }
 }

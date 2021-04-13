@@ -11,6 +11,7 @@ public class CoinDrop : MonoBehaviour
         {
             Destroy(gameObject);
             GlobalVarStore.Coins = GlobalVarStore.Coins + 5;
+            GlobalVarStore.Score = GlobalVarStore.Score + 10;
         }
     }
 }

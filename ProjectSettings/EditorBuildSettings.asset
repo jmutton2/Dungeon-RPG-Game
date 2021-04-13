@@ -29,4 +29,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/Cutscenes/InsideShop.unity
     guid: daf5dcf1eb10cf646a4ef4e6ef2e035c
+  - enabled: 1
+    path: Assets/_Scenes/DeathScreen.unity
+    guid: bbbb5809823bb26428fa5cf4f71a33db
+  - enabled: 1
+    path: Assets/_Scenes/Cutscenes/Opening.unity
+    guid: 0d1828925a68f5b4d85d19c3450fcad1
+  - enabled: 1
+    path: Assets/_Scenes/Level3.unity
+    guid: dc0e72b99dc0f8e4d82697732de1693b
   m_configObjects: {}

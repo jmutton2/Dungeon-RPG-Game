@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemyTouch : MonoBehaviour{
 
@@ -23,7 +24,7 @@ public class EnemyTouch : MonoBehaviour{
             TakeDamage(20);
             if(currentHealth <= 0)
             {
-                Destroy(transform.parent.gameObject);
+                SceneManager.LoadScene("DeathScreen");
             }
 
         }
@@ -33,5 +34,6 @@ public class EnemyTouch : MonoBehaviour{
     {
         currentHealth -= damage;
         healthbar.SetHealth(currentHealth);
+        GlobalVarStore.Score = GlobalVarStore.Score - 4;
     }
 }
