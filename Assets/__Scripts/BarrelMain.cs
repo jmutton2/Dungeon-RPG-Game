@@ -59,7 +59,6 @@ public class BarrelMain : MonoBehaviour
             Instantiate(Drop, this.transform.position, transform.rotation);
         }
 
-        //Instantiate(coinDrop, this.transform.position, transform.rotation);
         Destroy(gameObject);
         Debug.Log("Enemy died!");
     }

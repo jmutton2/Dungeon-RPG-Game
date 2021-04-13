@@ -81,7 +81,7 @@ public class HUD : MonoBehaviour
     void Update()
     {
         string coins = GlobalVarStore.Coins.ToString();
-        text1.text = "Souls: " + coins;
+        text1.text = "Loot: " + coins;
     }
 
 }

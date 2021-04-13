@@ -88,31 +88,10 @@ public class EnemyMain : MonoBehaviour
     public void TakeDamage(int damage)
     {
 
-        //if(GlobalVarStore.Equipped == "fire")
-        //{
-        //    hit = true;
-        //    delay = Time.time + 0.5;
-        //    int wait = 0;
-        //    int waited = 1;
-            
-        //    while(wait < waited && done == false)
-        //    {
-        //        if(done == false)
-        //        {
-        //            currentHealth -= damage;
-        //            fireTick = Time.time + 1;
-        //            done = true;
-        //        }      
-
-        //    }
-        //}
-        //else
-        //{
-            hit = true;
-            delay = Time.time + 0.5;
-            freezeDelay = Time.time + 2;
-            currentHealth -= damage;
-        //}   
+        hit = true;
+        delay = Time.time + 0.5;
+        freezeDelay = Time.time + 2;
+        currentHealth -= damage;
 
         if (currentHealth <= 0)
         {
@@ -123,14 +102,9 @@ public class EnemyMain : MonoBehaviour
 
     void Die()
     {
-        //Dead body spawn
-        Instantiate(deathDrop, this.transform.position, transform.rotation);
 
-        //Coin spawn
-        for (float i = 1; i <= dropRate; i++)
-        {
-            Instantiate(coinDrop, this.transform.position, transform.rotation);
-        }
+        Instantiate(deathDrop, this.transform.position, transform.rotation);
+        Instantiate(coinDrop, this.transform.position, transform.rotation);
         
         Destroy(gameObject);
         Debug.Log("Enemy died!");

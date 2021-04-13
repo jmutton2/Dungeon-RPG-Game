@@ -10,7 +10,7 @@ public class CoinDrop : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             Destroy(gameObject);
-            GlobalVarStore.Coins = GlobalVarStore.Coins + 1;
+            GlobalVarStore.Coins = GlobalVarStore.Coins + 5;
         }
     }
 }
