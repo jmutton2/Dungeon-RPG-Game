@@ -29,9 +29,12 @@ public class PlayerAttack : MonoBehaviour
 
         LayerMask enemy = LayerMask.GetMask("Enemy");
         LayerMask barrel = LayerMask.GetMask("Barrel");
+        LayerMask boss = LayerMask.GetMask("Boss"); // Andy added boss layer
+
 
         Collider2D[] hitEnemy = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemy);
         Collider2D[] hitBarrel = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, barrel);
+        Collider2D[] hitBoss = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, boss); // Andy added boss collider
 
         foreach (Collider2D hit in hitEnemy)
         {
@@ -41,6 +44,12 @@ public class PlayerAttack : MonoBehaviour
         foreach (Collider2D hit in hitBarrel)
         {
             hit.GetComponent<BarrelMain>().TakeDamage(attackDamage);
+        }
+
+        // Andy added boss collider2d
+        foreach (Collider2D hit in hitBoss)
+        {
+            hit.GetComponent<BossMain>().TakeDamage(attackDamage);
         }
     }
 
