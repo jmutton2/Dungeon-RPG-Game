@@ -17,6 +17,11 @@ public class EnemyMain : MonoBehaviour
     float freezeDelay = 0;
     private bool hit = false;
 
+    public GameObject projectilePrefab;
+    public float projectileSpeed = 15;
+    public float projectileDropTime = 2f;
+    int projCounter = 0;
+    bool yes = true;
 
     public int dropRate;
 
@@ -36,10 +41,17 @@ public class EnemyMain : MonoBehaviour
         if (distanceCurrent <= distance)
         {
             transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+
+            if (yes)
+            {
+                StartCoroutine(ProjectileDelay());
+                yes = false;
+            }
+
         }
-        
-        
-        if(GlobalVarStore.Equipped == "ice")
+
+
+        if (GlobalVarStore.Equipped == "ice")
         {
             if(freezeDelay > Time.time && hit == true)
             {
@@ -67,6 +79,26 @@ public class EnemyMain : MonoBehaviour
             }
         }
 
+    }
+    public void ProjectileFire()
+    {
+        GameObject projGO = Instantiate<GameObject>(projectilePrefab);
+        Rigidbody2D rigidB = projGO.GetComponent<Rigidbody2D>();
+        projGO.transform.position = transform.position;
+
+        Destroy(projGO, 15);
+
+    }
+    IEnumerator ProjectileDelay()
+    {
+        ProjectileFire();
+        while (projCounter < 5)
+        {
+            ProjectileFire();
+            projCounter++;
+            yield return new WaitForSeconds(2.0f);
+
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
