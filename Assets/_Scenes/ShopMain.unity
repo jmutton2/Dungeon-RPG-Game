@@ -19651,6 +19651,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hud Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 3689342430622954891, guid: 540665dd7b50ee842bd13eabeb46422a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3689342430622954895, guid: 540665dd7b50ee842bd13eabeb46422a,
         type: 3}
       propertyPath: m_Pivot.x

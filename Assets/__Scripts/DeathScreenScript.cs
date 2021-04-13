@@ -16,6 +16,6 @@ public class DeathScreenScript : MonoBehaviour
 
     public void Restart()
     {
-        SceneManager.LoadScene("Opening");
+        SceneManager.LoadScene("MainMenu");
     }
 }
