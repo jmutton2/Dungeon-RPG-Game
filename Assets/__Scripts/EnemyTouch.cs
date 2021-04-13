@@ -28,6 +28,34 @@ public class EnemyTouch : MonoBehaviour{
             }
 
         }
+        if (other.gameObject.tag == "Boss")
+        {
+            Debug.Log("Hit detected");
+            TakeDamage(50);
+            if (currentHealth <= 0)
+            {
+                SceneManager.LoadScene("DeathScreen");
+            }
+        }
+        if (other.gameObject.tag == "BossProj")
+        {
+            Debug.Log("Hit detected");
+            TakeDamage(30);
+            if (currentHealth <= 0)
+            {
+                SceneManager.LoadScene("DeathScreen");
+            }
+        }
+        if (other.gameObject.tag == "ProjEnemy")
+        {
+            Debug.Log("Hit detected");
+            //Destroy(other);
+            TakeDamage(70); 
+            if (currentHealth <= 0)
+            {
+                SceneManager.LoadScene("DeathScreen");
+            }
+        }
     }
 
     void TakeDamage(int damage)

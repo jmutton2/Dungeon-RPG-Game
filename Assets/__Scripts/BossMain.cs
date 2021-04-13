@@ -34,7 +34,6 @@ public class BossMain : MonoBehaviour
     {
         currentHealth = maxHealth;
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-
         fireRate = 1f; // set projectile rate 1 proj per 1 sec
         nextFire = Time.time;
     }
@@ -88,7 +87,7 @@ public class BossMain : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        
+
         if (other.gameObject.tag == "ProjHero")
         {
             Destroy(other.gameObject);
@@ -97,7 +96,7 @@ public class BossMain : MonoBehaviour
             if (currentHealth <= 0)
             {
                 Destroy(transform.parent.gameObject);
-                
+
             }
 
         }
@@ -114,7 +113,7 @@ public class BossMain : MonoBehaviour
         {
             Die();
         }
-  
+
     }
 
     void Die()
@@ -122,7 +121,7 @@ public class BossMain : MonoBehaviour
 
         Instantiate(deathDrop, this.transform.position, transform.rotation);
         Instantiate(coinDrop, this.transform.position, transform.rotation);
-        
+
         Destroy(gameObject);
         Debug.Log("Boss died!");
     }

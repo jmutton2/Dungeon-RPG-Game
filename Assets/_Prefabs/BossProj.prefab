@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 940622755000950141}
   m_Layer: 0
   m_Name: BossProj
-  m_TagString: Untagged
+  m_TagString: BossProj
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -97,9 +97,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c73b662746a942945a33750a085ccd7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 200
-  currentHealth: 200
-  healthbar: {fileID: 0}
   moveSpeed: 20
 --- !u!50 &940622755000950114
 Rigidbody2D:

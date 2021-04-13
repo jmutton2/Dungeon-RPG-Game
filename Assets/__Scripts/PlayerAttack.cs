@@ -63,23 +63,23 @@ public class PlayerAttack : MonoBehaviour
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
+    //private void OnTriggerEnter2D(Collider2D other)
+    //{
 
-        if (other.gameObject.tag == "ProjEnemy")
-        {
-            Destroy(other.gameObject);
-            Debug.Log("Enemy HIT");
-            //TakeDamage(70);
-            Debug.Log("Player -70");
+    //    if (other.gameObject.tag == "ProjEnemy")
+    //    {
+    //        Destroy(other.gameObject);
+    //        Debug.Log("Enemy HIT");
+    //        TakeDamage(70);
+    //        Debug.Log("Player -70");
             
 
-        }
-    }
-    public void TakeDamage(int damage)
-    {
+    //    }
+    //}
+    //public void TakeDamage(int damage)
+    //{
         
-        //currentHealth -= damage;
+    //    currentHealth -= damage;
         
-    }
+    //}
 }

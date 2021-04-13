@@ -166,7 +166,7 @@ Transform:
   - {fileID: 786433821}
   - {fileID: 69330258}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &69330257
 GameObject:
@@ -17999,6 +17999,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 618807510151192130, guid: 540665dd7b50ee842bd13eabeb46422a,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2478377552745932916, guid: 540665dd7b50ee842bd13eabeb46422a,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2478377552745932916, guid: 540665dd7b50ee842bd13eabeb46422a,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3689342429879441000, guid: 540665dd7b50ee842bd13eabeb46422a,
         type: 3}
       propertyPath: m_IsActive
@@ -18032,7 +18047,7 @@ PrefabInstance:
     - target: {fileID: 3689342430622954895, guid: 540665dd7b50ee842bd13eabeb46422a,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3689342430622954895, guid: 540665dd7b50ee842bd13eabeb46422a,
         type: 3}
@@ -85345,15 +85360,46 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 999703265, guid: f8e50e001097a8d449d097109e5f398e, type: 3}
       propertyPath: speed
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 999703265, guid: f8e50e001097a8d449d097109e5f398e, type: 3}
+      propertyPath: coinDrop
+      value: 
+      objectReference: {fileID: 2214081362365084484, guid: 39517e2b4f98f924e927ea1b60423e5a,
+        type: 3}
     - target: {fileID: 999703265, guid: f8e50e001097a8d449d097109e5f398e, type: 3}
       propertyPath: distance
       value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 999703265, guid: f8e50e001097a8d449d097109e5f398e, type: 3}
+      propertyPath: deathDrop
+      value: 
+      objectReference: {fileID: 6341912236526903994, guid: 7b162a7b0d402a94e8d872b58ded2080,
+        type: 3}
+    - target: {fileID: 999703265, guid: f8e50e001097a8d449d097109e5f398e, type: 3}
+      propertyPath: healthbar
+      value: 
+      objectReference: {fileID: 1547114197}
+    - target: {fileID: 999703265, guid: f8e50e001097a8d449d097109e5f398e, type: 3}
       propertyPath: maxHealth
-      value: 200
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 930035627385624260, guid: f8e50e001097a8d449d097109e5f398e,
+        type: 3}
+      propertyPath: coinDrop
+      value: 
+      objectReference: {fileID: 2214081362365084484, guid: 39517e2b4f98f924e927ea1b60423e5a,
+        type: 3}
+    - target: {fileID: 930035627385624260, guid: f8e50e001097a8d449d097109e5f398e,
+        type: 3}
+      propertyPath: deathDrop
+      value: 
+      objectReference: {fileID: 1853075986909130431, guid: 5978df3ce0163da4aa8561e74cb47cd0,
+        type: 3}
+    - target: {fileID: 930035627385624260, guid: f8e50e001097a8d449d097109e5f398e,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5771964709614564132, guid: f8e50e001097a8d449d097109e5f398e,
         type: 3}

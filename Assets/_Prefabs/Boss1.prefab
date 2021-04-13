@@ -72,7 +72,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 6
   m_Sprite: {fileID: -8533709669005334204, guid: a18584992c113ee4f85e10fc4bed39a2,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -102,12 +102,11 @@ MonoBehaviour:
   distance: 30
   shootDamage: 50
   SR: {fileID: 2153883648376341199}
+  healthbar: {fileID: 0}
   delay: 0
   dropRate: 0
-  deathDrop: {fileID: 2214081362365084484, guid: 39517e2b4f98f924e927ea1b60423e5a,
-    type: 3}
-  coinDrop: {fileID: 6341912236526903994, guid: 7b162a7b0d402a94e8d872b58ded2080,
-    type: 3}
+  deathDrop: {fileID: 0}
+  coinDrop: {fileID: 0}
   BossProjectile: {fileID: 940622755000950137, guid: dc4c648b3d564ab4d8a2a03fc151e8e0,
     type: 3}
 --- !u!50 &4110353938938331068
