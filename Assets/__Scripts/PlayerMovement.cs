@@ -22,6 +22,9 @@ public class PlayerMovement : MonoBehaviour
     private float currentDiry;
     // -1 => down, +1 => up
 
+    float nextDash = 0f;
+    float dashGo = 5f;
+
 
     // Update is called once per frame
     void Update()
@@ -99,12 +102,31 @@ public class PlayerMovement : MonoBehaviour
                 Destroy(projGO, lifespan);
             }
         }
+        //code doesnt work
+        //if (Time.time >= nextDash)
+        //{
+        //    if (Input.GetKeyDown(KeyCode.L))
+        //    {
+        //        Dash();
+        //        nextDash = Time.time + dashGo;
+        //    }
+        //}
+        
+
     }
 
     void FixedUpdate()
     {
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
     }
+
+    // code doesnt work
+    //IEnumerator Dash()
+    //{
+    //    moveSpeed = 20;
+    //    yield return new WaitForSeconds(2.0f);
+    //    moveSpeed = 10;
+    //}
 
 
 }

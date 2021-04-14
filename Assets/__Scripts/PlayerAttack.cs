@@ -9,6 +9,7 @@ public class PlayerAttack : MonoBehaviour
     public LayerMask layers;
     public int attackDamage = 35;
     float nextAttackTime = 0f;
+    float nextDash = 0f;
     public float attackDelay = 1f;
 
 
@@ -22,7 +23,15 @@ public class PlayerAttack : MonoBehaviour
                 nextAttackTime = Time.time + attackDelay;
             }
         }
-        
+        if (Time.time >= nextAttackTime)
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                Attack();
+                nextAttackTime = Time.time + attackDelay;
+            }
+        }
+
     }
 
     void Attack()
@@ -63,23 +72,4 @@ public class PlayerAttack : MonoBehaviour
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
 
-    //private void OnTriggerEnter2D(Collider2D other)
-    //{
-
-    //    if (other.gameObject.tag == "ProjEnemy")
-    //    {
-    //        Destroy(other.gameObject);
-    //        Debug.Log("Enemy HIT");
-    //        TakeDamage(70);
-    //        Debug.Log("Player -70");
-            
-
-    //    }
-    //}
-    //public void TakeDamage(int damage)
-    //{
-        
-    //    currentHealth -= damage;
-        
-    //}
 }
