@@ -40,7 +40,7 @@ public class HUD : MonoBehaviour
             text6.text = "Max Health: 150";
 
             Text text7 = attackDamage.GetComponent<Text>();
-            text7.text = "Attack Damage: 30";
+            text7.text = "Attack Damage: 60";
 
             Text text8 = attackSpeed.GetComponent<Text>();
             text8.text = "Attack Speed: 1x";

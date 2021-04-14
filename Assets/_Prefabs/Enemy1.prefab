@@ -102,8 +102,10 @@ MonoBehaviour:
   distance: 24.81
   shootDamage: 50
   SR: {fileID: 8642231935548422742}
+  EnemyType: one
   delay: 0
-  projectilePrefab: {fileID: 0}
+  projectilePrefab: {fileID: 2767507938806673127, guid: b767c8f51f7c2cb4c8a24c3584f579c4,
+    type: 3}
   projectileSpeed: 15
   projectileDropTime: 2
   dropRate: 5

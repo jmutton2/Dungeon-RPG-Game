@@ -1092,8 +1092,7 @@ MonoBehaviour:
   m_Text: 'Fire
 
 
-    Dealing lower on hit damage, but has a damage over time effect.
-    Lower defense.'
+    Deals more damage. Lower defense. Average defense'
 --- !u!222 &1150505660
 CanvasRenderer:
   m_ObjectHideFlags: 0

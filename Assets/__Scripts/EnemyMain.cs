@@ -13,6 +13,8 @@ public class EnemyMain : MonoBehaviour
     public SpriteRenderer SR;
     private Transform target;
 
+    public string EnemyType;
+
     public double delay = 0;
     float freezeDelay = 0;
     private bool hit = false;
@@ -42,11 +44,15 @@ public class EnemyMain : MonoBehaviour
         {
             transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
 
-            if (yes)
+            if(EnemyType == "two")
             {
-                StartCoroutine(ProjectileDelay());
-                yes = false;
+                if (yes)
+                {
+                    StartCoroutine(ProjectileDelay());
+                    yes = false;
+                }
             }
+            
 
         }
 

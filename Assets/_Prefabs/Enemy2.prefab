@@ -98,10 +98,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 70
-  speed: 3
+  speed: 5
   distance: 30
   shootDamage: 10
   SR: {fileID: 7975713015140854377}
+  EnemyType: two
   delay: 0
   projectilePrefab: {fileID: 2767507938806673127, guid: b767c8f51f7c2cb4c8a24c3584f579c4,
     type: 3}

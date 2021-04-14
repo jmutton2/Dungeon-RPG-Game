@@ -31,7 +31,7 @@ public class PlayerMain : MonoBehaviour
                 break;
             case "fire":
                 SR.color = Color.red;
-                attack.attackDamage = 30;
+                attack.attackDamage = 60;
                 attack.attackDelay = 1f;
                 shoot.projectileSpeed = 20;
                 health.maxHealth = 150;
