@@ -193,7 +193,9 @@ MonoBehaviour:
   m_Text: 'Melee Attack: Space
 
 
-    Shoot: K'
+    Shoot: K
+
+    Dash: L'
 --- !u!222 &119545909
 CanvasRenderer:
   m_ObjectHideFlags: 0

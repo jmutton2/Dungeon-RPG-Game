@@ -106,12 +106,11 @@ public class PlayerMovement : MonoBehaviour
                 Destroy(projGO, lifespan);
             }
         }
-        //code doesnt work
+
         if (Time.time >= nextDash && GlobalVarStore.Dash > 0)
         {
             if (Input.GetKeyDown(KeyCode.L))
             {
-                //moveSpeed = 20;
                 StartCoroutine(Dash());
                 nextDash = Time.time + dashGo;
             }
@@ -124,8 +123,6 @@ public class PlayerMovement : MonoBehaviour
     {
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
     }
-
-    //code doesnt work
    IEnumerator Dash()
    {
         GlobalVarStore.Dash = GlobalVarStore.Dash - 1;

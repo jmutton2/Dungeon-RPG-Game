@@ -98901,6 +98901,7 @@ MonoBehaviour:
   attackDamage: {fileID: 519582186}
   attackSpeed: {fileID: 1420424031}
   projSpeed: {fileID: 4290888}
+  dash: {fileID: 3689342429741957475}
 --- !u!1 &677964728 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3925252648390854341, guid: 540665dd7b50ee842bd13eabeb46422a,
@@ -103868,6 +103869,12 @@ MonoBehaviour:
 --- !u!1 &3689342429741957474 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7875801071632833242, guid: 540665dd7b50ee842bd13eabeb46422a,
+    type: 3}
+  m_PrefabInstance: {fileID: 3689342429741957472}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3689342429741957475 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4380838007218837750, guid: 540665dd7b50ee842bd13eabeb46422a,
     type: 3}
   m_PrefabInstance: {fileID: 3689342429741957472}
   m_PrefabAsset: {fileID: 0}

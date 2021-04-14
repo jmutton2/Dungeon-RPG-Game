@@ -9,7 +9,6 @@ public class PlayerAttack : MonoBehaviour
     public LayerMask layers;
     public int attackDamage = 35;
     float nextAttackTime = 0f;
-    float nextDash = 0f;
     public float attackDelay = 1f;
 
 
@@ -23,14 +22,7 @@ public class PlayerAttack : MonoBehaviour
                 nextAttackTime = Time.time + attackDelay;
             }
         }
-        if (Time.time >= nextAttackTime)
-        {
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                Attack();
-                nextAttackTime = Time.time + attackDelay;
-            }
-        }
+        
 
     }
 
@@ -62,7 +54,6 @@ public class PlayerAttack : MonoBehaviour
             hit.GetComponent<BossMain>().TakeDamage(attackDamage);
         }
     }
-
 
     void OnDrawGizmosSelected()
     {
