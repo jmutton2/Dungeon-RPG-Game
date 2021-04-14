@@ -7,11 +7,13 @@ public class HUD : MonoBehaviour
 {
     public GameObject soulCounter;
     private Text text1;
+    private Text text18;
 
     public GameObject health;
     public GameObject attackDamage;
     public GameObject attackSpeed;
     public GameObject projSpeed;
+    public GameObject dash;
 
     
 
@@ -19,6 +21,7 @@ public class HUD : MonoBehaviour
     {
 
         text1 = soulCounter.GetComponent<Text>();
+        text18 = dash.GetComponent<Text>();
 
         if (GlobalVarStore.Equipped == "default")
         {
@@ -82,6 +85,10 @@ public class HUD : MonoBehaviour
     {
         string coins = GlobalVarStore.Coins.ToString();
         text1.text = "Loot: " + coins;
+
+        string dashes = GlobalVarStore.Dash.ToString();
+        text18.text = "Dashes: " + dashes;
+
     }
 
 }

@@ -3352,6 +3352,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2108792994448881772, guid: 5f3f33353c741e040b867fcff2a2e6cd,
         type: 3}
+      propertyPath: dash
+      value: 
+      objectReference: {fileID: 999061052}
+    - target: {fileID: 2108792994448881772, guid: 5f3f33353c741e040b867fcff2a2e6cd,
+        type: 3}
       propertyPath: health
       value: 
       objectReference: {fileID: 2039868361}
@@ -73050,6 +73055,12 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8483885184174428403, guid: fbd0f5635ebfec544952c7140ebbc4fa,
     type: 3}
   m_PrefabInstance: {fileID: 938435570}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &999061052 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4380838007218837750, guid: 540665dd7b50ee842bd13eabeb46422a,
+    type: 3}
+  m_PrefabInstance: {fileID: 2039868357}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1017118202 stripped
 GameObject:

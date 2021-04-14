@@ -25,8 +25,12 @@ public class PlayerMovement : MonoBehaviour
     float nextDash = 0f;
     float dashGo = 5f;
 
-
     // Update is called once per frame
+
+    void Start()
+    {
+        GlobalVarStore.Dash = 5;
+    }
     void Update()
     {
         movement.x = Input.GetAxisRaw("Horizontal");
@@ -103,15 +107,16 @@ public class PlayerMovement : MonoBehaviour
             }
         }
         //code doesnt work
-        //if (Time.time >= nextDash)
-        //{
-        //    if (Input.GetKeyDown(KeyCode.L))
-        //    {
-        //        Dash();
-        //        nextDash = Time.time + dashGo;
-        //    }
-        //}
-        
+        if (Time.time >= nextDash && GlobalVarStore.Dash > 0)
+        {
+            if (Input.GetKeyDown(KeyCode.L))
+            {
+                //moveSpeed = 20;
+                StartCoroutine(Dash());
+                nextDash = Time.time + dashGo;
+            }
+        }
+
 
     }
 
@@ -120,13 +125,14 @@ public class PlayerMovement : MonoBehaviour
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
     }
 
-    // code doesnt work
-    //IEnumerator Dash()
-    //{
-    //    moveSpeed = 20;
-    //    yield return new WaitForSeconds(2.0f);
-    //    moveSpeed = 10;
-    //}
+    //code doesnt work
+   IEnumerator Dash()
+   {
+        GlobalVarStore.Dash = GlobalVarStore.Dash - 1;
+        moveSpeed = 30;
+        yield return new WaitForSeconds(0.5f);
+        moveSpeed = 10;
+   }
 
 
 }
