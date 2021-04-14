@@ -114,7 +114,7 @@ public class EnemyMain : MonoBehaviour
             TakeDamage(GlobalVarStore.ProjDamage);
             if (currentHealth <= 0)
             {
-                Destroy(transform.parent.gameObject);
+                Destroy(gameObject);
                 
             }
 
