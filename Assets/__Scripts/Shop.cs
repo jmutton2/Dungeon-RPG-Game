@@ -30,9 +30,7 @@ public class Shop : MonoBehaviour
             GlobalVarStore.Coins = GlobalVarStore.Coins - 5;
             GlobalVarStore.DefaultPurchased = true;
             GlobalVarStore.Equipped = "default";
-
             GlobalVarStore.Score = GlobalVarStore.Score + 30;
-
         }
 
         if (GlobalVarStore.DefaultPurchased)
@@ -43,7 +41,7 @@ public class Shop : MonoBehaviour
 
     }
 
-    public void FireButton()
+    public void FireButton() //fire button
     {
 
         if (!GlobalVarStore.FirePurchased && GlobalVarStore.Coins >= 50)
@@ -51,9 +49,7 @@ public class Shop : MonoBehaviour
             GlobalVarStore.Coins = GlobalVarStore.Coins - 50;
             GlobalVarStore.FirePurchased = true;
             GlobalVarStore.Equipped = "fire";
-
             GlobalVarStore.Score = GlobalVarStore.Score + 30;
-
         }
 
         if (GlobalVarStore.FirePurchased)
@@ -63,7 +59,7 @@ public class Shop : MonoBehaviour
 
     }
 
-    public void IceButton()
+    public void IceButton() //ice button
     {
 
         if (!GlobalVarStore.IcePurchased && GlobalVarStore.Coins >= 50)
@@ -71,9 +67,7 @@ public class Shop : MonoBehaviour
             GlobalVarStore.Coins = GlobalVarStore.Coins - 50;
             GlobalVarStore.IcePurchased = true;
             GlobalVarStore.Equipped = "ice";
-
             GlobalVarStore.Score = GlobalVarStore.Score + 30;
-
         }
 
         if (GlobalVarStore.IcePurchased)
@@ -82,7 +76,7 @@ public class Shop : MonoBehaviour
         }
     }
 
-    public void LightningButton()
+    public void LightningButton() //lightning button
     {
 
         if (!GlobalVarStore.LightningPurchased && GlobalVarStore.Coins >= 100)
@@ -90,7 +84,6 @@ public class Shop : MonoBehaviour
             GlobalVarStore.Coins = GlobalVarStore.Coins - 100;
             GlobalVarStore.LightningPurchased = true;
             GlobalVarStore.Equipped = "lightning";
-
             GlobalVarStore.Score = GlobalVarStore.Score + 30;
         }
 

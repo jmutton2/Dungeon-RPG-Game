@@ -54,7 +54,7 @@ public class BossMain : MonoBehaviour
             }
         }
         
-
+        //enemy indicator
         if (delay > Time.time && hit == true)
         {
             SR.color = Color.red;
@@ -70,42 +70,34 @@ public class BossMain : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-
-        if (other.gameObject.tag == "ProjHero")
+        if (other.gameObject.tag == "ProjHero") //check for collision with player projectile
         {
             Destroy(other.gameObject);
-            Debug.Log("Boss HIT");
             TakeDamage(GlobalVarStore.ProjDamage);
             if (currentHealth <= 0)
             {
                 Destroy(transform.parent.gameObject);
-
             }
 
         }
     }
-    public void TakeDamage(int damage)
+    public void TakeDamage(int damage) //damage boss function
     {
-
         hit = true;
         delay = Time.time + 0.5;
         freezeDelay = Time.time + 2;
         currentHealth -= damage;
-
-        if (currentHealth <= 0)
+        if (currentHealth <= 0) 
         {
             Die();
         }
 
     }
 
-    void Die()
+    void Die() //destroy boss
     {
-
         Instantiate(deathDrop, this.transform.position, transform.rotation);
         Instantiate(coinDrop, this.transform.position, transform.rotation);
-
         Destroy(gameObject);
-        Debug.Log("Boss died!");
     }
 }

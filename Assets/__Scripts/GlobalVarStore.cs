@@ -135,7 +135,7 @@
             projDamage = value;
         }
     }
-
+    //Dash
     public static int Dash
     {
         get

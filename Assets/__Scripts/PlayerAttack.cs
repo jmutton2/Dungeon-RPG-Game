@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
+    //attack variables
     public Transform attackPoint;
     public float attackRange = 0.5f;
     public LayerMask layers;
@@ -13,17 +14,15 @@ public class PlayerAttack : MonoBehaviour
 
 
     void Update()
-    {
+    {//player melee attack
         if (Time.time >= nextAttackTime)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space))//activate on 'space' press
             {
-                Attack();
-                nextAttackTime = Time.time + attackDelay;
+                Attack(); //call attack fucntions
+                nextAttackTime = Time.time + attackDelay; // add delay
             }
         }
-        
-
     }
 
     void Attack()
@@ -38,24 +37,24 @@ public class PlayerAttack : MonoBehaviour
         Collider2D[] hitBarrel = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, barrel);
         Collider2D[] hitBoss = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, boss); // Andy added boss collider
 
-        foreach (Collider2D hit in hitEnemy)
+        foreach (Collider2D hit in hitEnemy) //checking layermask for enemies
         {
             hit.GetComponent<EnemyMain>().TakeDamage(attackDamage);
         }
 
-        foreach (Collider2D hit in hitBarrel)
+        foreach (Collider2D hit in hitBarrel) //checking layermask for barrels
         {
             hit.GetComponent<BarrelMain>().TakeDamage(attackDamage);
         }
 
         // Andy added boss collider2d
-        foreach (Collider2D hit in hitBoss)
+        foreach (Collider2D hit in hitBoss) //checking layermask for boss
         {
             hit.GetComponent<BossMain>().TakeDamage(attackDamage);
         }
     }
 
-    void OnDrawGizmosSelected()
+    void OnDrawGizmosSelected() //drawing sphere for testing purposes.
     {
         if(attackPoint == null){
             return;

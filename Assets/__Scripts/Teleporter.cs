@@ -17,7 +17,7 @@ public class Teleporter : MonoBehaviour
     {
         if (Time.time >= GlobalVarStore.NextTeleTime)
         {
-                if (other.gameObject.tag == "Player")
+                if (other.gameObject.tag == "Player") //check to see if its player om collision
                 {
                     player.transform.position = new Vector3(toPoint.transform.position.x, toPoint.transform.position.y, 0);
                     GlobalVarStore.NextTeleTime  = GlobalVarStore.NextTeleTime  + 10f;

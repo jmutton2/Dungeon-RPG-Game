@@ -6,7 +6,6 @@ public class PlayerMovement : MonoBehaviour
 {
 
     public float moveSpeed = 80f;
-
     public Rigidbody2D rb;
     public Animator animator;
     Vector2 movement;
@@ -25,50 +24,49 @@ public class PlayerMovement : MonoBehaviour
     float nextDash = 0f;
     float dashGo = 5f;
 
-    // Update is called once per frame
-
     void Start()
     {
         GlobalVarStore.Dash = 5;
     }
     void Update()
-    {
+    { //gets raw movement
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
+        //setting float values from raw movement into blend tree
         animator.SetFloat("Horizontal", movement.x);
         animator.SetFloat("Vertical", movement.y);
         animator.SetFloat("Speed", movement.sqrMagnitude);
-
+        //getting float values from blend tree
         currentDirx = animator.GetFloat("Horizontal");
         currentDiry = animator.GetFloat("Vertical");
 
-
+        //projectile shoot
         if(Time.time >= nextAttackTime)
         {
-            if (Input.GetKeyDown(KeyCode.K))
+            if (Input.GetKeyDown(KeyCode.K)) // on key press 'K'
             {
-                if(currentDirx == -1)
+                if(currentDirx == -1) //shoot left
                 {
                     direction = 3;
                     ProjFire();
                     nextAttackTime = Time.time + attackDelay;
-                } else if(currentDirx == 1)
+                } else if(currentDirx == 1) //shoot right
                 {
                     direction = 2;
                     ProjFire();
                     nextAttackTime = Time.time + attackDelay;
-                } else if(currentDiry == 1)
+                } else if(currentDiry == 1) //shoot down
                 {
                     direction = 1;
                     ProjFire();
                     nextAttackTime = Time.time + attackDelay;
-                } else if (currentDiry == -1)
+                } else if (currentDiry == -1) //shoot up
                 {
                     direction = 0;
                     ProjFire();
                     nextAttackTime = Time.time + attackDelay;
-                } else if(currentDiry == 0 && currentDirx == 0)
+                } else if(currentDiry == 0 && currentDirx == 0) //default case
                 {
                     direction = 0;
                     ProjFire();
@@ -77,14 +75,16 @@ public class PlayerMovement : MonoBehaviour
             }
         }
         
-
+        //projectile foot function
         void ProjFire()
         {
+
+            //instantiate projectile depending on direction player is facing
             GameObject projGO = Instantiate<GameObject>(projectilePrefab);
             Rigidbody2D rigidB = projGO.GetComponent<Rigidbody2D>();
 
             projGO.transform.position = transform.position;
-
+            
             if(direction == 1)
             {
                 rigidB.velocity = Vector3.up * projectileSpeed;
@@ -106,13 +106,13 @@ public class PlayerMovement : MonoBehaviour
                 Destroy(projGO, lifespan);
             }
         }
-
+        //allows player to dash by pressing 'L'
         if (Time.time >= nextDash && GlobalVarStore.Dash > 0)
         {
             if (Input.GetKeyDown(KeyCode.L))
             {
-                StartCoroutine(Dash());
-                nextDash = Time.time + dashGo;
+                StartCoroutine(Dash()); //call dash function
+                nextDash = Time.time + dashGo; //set delay for dash
             }
         }
 
@@ -123,12 +123,12 @@ public class PlayerMovement : MonoBehaviour
     {
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
     }
-   IEnumerator Dash()
+   IEnumerator Dash() //dash function
    {
-        GlobalVarStore.Dash = GlobalVarStore.Dash - 1;
-        moveSpeed = 30;
-        yield return new WaitForSeconds(0.5f);
-        moveSpeed = 10;
+        GlobalVarStore.Dash = GlobalVarStore.Dash - 1; //remove number of dashes left from global variable
+        moveSpeed = 30; // update speed
+        yield return new WaitForSeconds(0.5f); //wait half a second
+        moveSpeed = 10; // default speed
    }
 
 

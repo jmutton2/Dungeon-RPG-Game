@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BossTouch : MonoBehaviour
 {
+    //boss health variables
     public int maxHealth = 500;
     public int currentHealth = 500;
     public HealthBar healthbar;
@@ -14,8 +15,8 @@ public class BossTouch : MonoBehaviour
 
     private void Start()
     {
-        currentHealth = maxHealth;
-        healthbar.SetMaxHeath(maxHealth);
+        currentHealth = maxHealth; //set boss max health
+        //healthbar.SetMaxHeath(maxHealth);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -30,9 +31,8 @@ public class BossTouch : MonoBehaviour
             }
         }
     }
-    public void TakeDamage(int damage)
+    public void TakeDamage(int damage) //damage boss
     {
-
         currentHealth -= damage;
         healthbar.SetHealth(currentHealth);
 
@@ -43,13 +43,10 @@ public class BossTouch : MonoBehaviour
 
     }
 
-    void Die()
+    void Die() //destroy boss
     {
-
         Instantiate(deathDrop, this.transform.position, transform.rotation);
         Instantiate(coinDrop, this.transform.position, transform.rotation);
-
         Destroy(gameObject);
-        Debug.Log("Boss died!");
     }
 }

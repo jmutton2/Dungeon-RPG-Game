@@ -19,15 +19,15 @@ public class BarrelMain : MonoBehaviour
 
     void Start()
     {
-        currentHealth = maxHealth;
+        currentHealth = maxHealth; //set barrel health
     }
 
     void Update()
     {
 
-        num = box.Next(1, 3);
+        num = box.Next(1, 3); //get random number for gold drop from barrel
 
-        if (delay > Time.time && hit == true)
+        if (delay > Time.time && hit == true) //turn red on hit and back to normal
         {
             SR.color = Color.red;
             hit = false;
@@ -38,7 +38,7 @@ public class BarrelMain : MonoBehaviour
         }
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(int damage) //deal damage to barrel
     {
         hit = true;
         delay = Time.time + 0.5;
@@ -50,10 +50,9 @@ public class BarrelMain : MonoBehaviour
         }
     }
 
-    void Die()
+    void Die() //destroy barrel
     {
-        
-
+       
         if(num == 1)
         {
             Instantiate(Drop, this.transform.position, transform.rotation);

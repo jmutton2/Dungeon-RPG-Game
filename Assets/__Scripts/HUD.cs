@@ -5,24 +5,24 @@ using UnityEngine.UI;
 
 public class HUD : MonoBehaviour
 {
+    //instantiate gameobject
     public GameObject soulCounter;
     private Text text1;
     private Text text18;
-
     public GameObject health;
     public GameObject attackDamage;
     public GameObject attackSpeed;
     public GameObject projSpeed;
     public GameObject dash;
-
     
 
     void Start()
     {
-
+        //text components
         text1 = soulCounter.GetComponent<Text>();
         text18 = dash.GetComponent<Text>();
 
+        //setting hud stats for default character
         if (GlobalVarStore.Equipped == "default")
         {
             Text text2 = health.GetComponent<Text>();
@@ -37,6 +37,7 @@ public class HUD : MonoBehaviour
             Text text5 = projSpeed.GetComponent<Text>();
             text5.text = "Projectile Speed: 15";
         }
+        //setting hud stats for fire character
         if (GlobalVarStore.Equipped == "fire")
         {
             Text text6 = health.GetComponent<Text>();
@@ -51,6 +52,7 @@ public class HUD : MonoBehaviour
             Text text9 = projSpeed.GetComponent<Text>();
             text9.text = "Projectile Speed: 20";
         }
+        //setting hud stats for ice character
         if (GlobalVarStore.Equipped == "ice")
         {
             Text text10 = health.GetComponent<Text>();
@@ -65,6 +67,7 @@ public class HUD : MonoBehaviour
             Text text13 = projSpeed.GetComponent<Text>();
             text13.text = "Projectile Speed: 20";
         }
+        //setting hud stats for lightning character
         if (GlobalVarStore.Equipped == "lightning")
         {
             Text text14 = health.GetComponent<Text>();
@@ -82,7 +85,7 @@ public class HUD : MonoBehaviour
     }
 
     void Update()
-    {
+    { //updates loot and dash varibles on HUD
         string coins = GlobalVarStore.Coins.ToString();
         text1.text = "Loot: " + coins;
 

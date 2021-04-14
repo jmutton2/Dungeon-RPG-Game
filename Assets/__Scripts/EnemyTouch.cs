@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class EnemyTouch : MonoBehaviour{
 
+    //health variables
     public int maxHealth = 200;
     public int currentHealth = 200;
     public HealthBar healthbar;
@@ -12,44 +13,38 @@ public class EnemyTouch : MonoBehaviour{
 
     private void Start()
     {
-        currentHealth = maxHealth;
-        healthbar.SetMaxHeath(maxHealth);
+        currentHealth = maxHealth; //set default health
+        healthbar.SetMaxHeath(maxHealth); //update health bar
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Enemy")
+        if (other.gameObject.tag == "Enemy") //collision with first enemy
         {
-            Debug.Log("Hit detected");
             TakeDamage(20);
             if(currentHealth <= 0)
             {
                 SceneManager.LoadScene("DeathScreen");
             }
-
         }
-        if (other.gameObject.tag == "Boss")
+        if (other.gameObject.tag == "Boss") //collision with final boss
         {
-            Debug.Log("Hit detected");
             TakeDamage(50);
             if (currentHealth <= 0)
             {
                 SceneManager.LoadScene("DeathScreen");
             }
         }
-        if (other.gameObject.tag == "BossProj")
+        if (other.gameObject.tag == "BossProj") //collision with final boss projectile
         {
-            Debug.Log("Hit detected");
             TakeDamage(30);
             if (currentHealth <= 0)
             {
                 SceneManager.LoadScene("DeathScreen");
             }
         }
-        if (other.gameObject.tag == "ProjEnemy")
+        if (other.gameObject.tag == "ProjEnemy") //collision with second enemy projectile
         {
-            Debug.Log("Hit detected");
-            //Destroy(other);
             TakeDamage(70); 
             if (currentHealth <= 0)
             {
@@ -58,7 +53,7 @@ public class EnemyTouch : MonoBehaviour{
         }
     }
 
-    void TakeDamage(int damage)
+    void TakeDamage(int damage) //damage player function
     {
         currentHealth -= damage;
         healthbar.SetHealth(currentHealth);
